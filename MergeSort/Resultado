@@ -1,0 +1,54 @@
+Número de dados: 100000
+Tipo de ordem: Aleatório
+Número de interações: 3337856
+Número de trocas: 1668928
+Tempo de execução: 0.012118
+-------------
+Número de dados: 100000
+Tipo de ordem: Crescente
+Número de interações: 3337856
+Número de trocas: 1668928
+Tempo de execução: 0.006329
+-------------
+Número de dados: 100000
+Tipo de ordem: Decrescente
+Número de interações: 3337856
+Número de trocas: 1668928
+Tempo de execução: 0.006762
+-------------
+Número de dados: 10000
+Tipo de ordem: Aleatório
+Número de interações: 267232
+Número de trocas: 133616
+Tempo de execução: 0.001170
+-------------
+Número de dados: 10000
+Tipo de ordem: Crescente
+Número de interações: 267232
+Número de trocas: 133616
+Tempo de execução: 0.000557
+-------------
+Número de dados: 10000
+Tipo de ordem: Decrescente
+Número de interações: 267232
+Número de trocas: 133616
+Tempo de execução: 0.000524
+-------------
+Número de dados: 100
+Tipo de ordem: Aleatório
+Número de interações: 1344
+Número de trocas: 672
+Tempo de execução: 0.000010
+-------------
+Número de dados: 100
+Tipo de ordem: Crescente
+Número de interações: 1344
+Número de trocas: 672
+Tempo de execução: 0.000005
+-------------
+Número de dados: 100
+Tipo de ordem: Decrescente
+Número de interações: 1344
+Número de trocas: 672
+Tempo de execução: 0.000005
+-------------

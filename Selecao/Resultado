@@ -1,0 +1,36 @@
+Número de dados: 10000
+Tipo de ordem: Aleatorio
+Número de interações: 77284
+Número de trocas: 9993
+Tempo de execução: 0.055500
+-------------
+Número de dados: 10000
+Tipo de ordem: Crescente
+Número de interações: 0
+Número de trocas: 0
+Tempo de execução: 0.056418
+-------------
+Número de dados: 10000
+Tipo de ordem: Decrescente
+Número de interações: 25000000
+Número de trocas: 5000
+Tempo de execução: 0.055807
+-------------
+Número de dados: 10000
+Tipo de ordem: Aleatorio
+Número de interações: 77559
+Número de trocas: 9991
+Tempo de execução: 0.054720
+-------------
+Número de dados: 10000
+Tipo de ordem: Crescente
+Número de interações: 0
+Número de trocas: 0
+Tempo de execução: 0.048856
+-------------
+Número de dados: 10000
+Tipo de ordem: Decrescente
+Número de interações: 25000000
+Número de trocas: 5000
+Tempo de execução: 0.052912
+-------------
