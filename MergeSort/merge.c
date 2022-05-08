@@ -8,7 +8,8 @@ int geraAleatorios(char *nomeArquivo, int qtd)
   FILE *arq; //cria o ponteiro pra arquivo
   srand(time(0)); //faz com que os numeros aleatórios não sejam sempre os mesmo
   arq = fopen(nomeArquivo,"w"); //abre o arquivo pra inserção
-  if(arq == NULL){ //se ocorrer erro ao abrir o arquivo retorna 1;
+  if(arq == NULL)
+  { //se ocorrer erro ao abrir o arquivo retorna 1;
     return 1;
   }
   for(int i=0; i <= qtd-1; i++) //for pra gerar qtd de numeros aleatórios
@@ -43,7 +44,8 @@ int geraCrescente(char *nomeArquivo, int qtd)
   FILE *arq; //cria o ponteiro pra arquivo
   
   arq = fopen(nomeArquivo,"w"); //abre o arquivo pra inserção
-  if(arq == NULL){ //se ocorrer erro ao abrir o arquivo retorna 1;
+  if(arq == NULL)
+  { //se ocorrer erro ao abrir o arquivo retorna 1;
     return 1;
   }
   for(int i=0; i <= qtd-1; i++) //for pra gerar qtd de numeros aleatórios
@@ -59,7 +61,8 @@ int geraDecrescente(char *nomeArquivo, int qtd)
   FILE *arq; //cria o ponteiro pra arquivo
   
   arq = fopen(nomeArquivo,"w"); //abre o arquivo pra inserção
-  if(arq == NULL){ //se ocorrer erro ao abrir o arquivo retorna 1;
+  if(arq == NULL)
+  { //se ocorrer erro ao abrir o arquivo retorna 1;
     return 1;
   }
   for(int i = qtd; i>=0; i--) //for pra gerar qtd de numeros aleatórios
@@ -99,65 +102,65 @@ void merge(int *vet, int inicio, int meio, int fim, int *contadorTroca, int *con
 {
   
   // Cria o tamanho dos vetores auxiliares
-    int n1 = meio - inicio + 1;
-    int n2 = fim - meio;
+  int n1 = meio - inicio + 1;
+  int n2 = fim - meio;
   // Cria os vetores auxiliares
-    int A[n1], B[n2];
+  int A[n1], B[n2];
 
-    for (int i = 0; i < n1; i++)
-    {
-      *contadorInteracao += 1;
-      A[i] = vet[inicio + i];
-    }
+  for (int i = 0; i < n1; i++)
+  {
+    *contadorInteracao += 1;
+    A[i] = vet[inicio + i];
+  }
         
-    for (int j = 0; j < n2; j++)
-    {
-      *contadorInteracao += 1;
-      B[j] = vet[meio + 1 + j];
-    }
+  for (int j = 0; j < n2; j++)
+  {
+    *contadorInteracao += 1;
+    B[j] = vet[meio + 1 + j];
+  }
         
 
   
-    int i, j, k;
-    i = 0;
-    j = 0;
-    k = inicio;
-
-    while (i < n1 && j < n2) 
+  int i, j, k;
+  i = 0;
+  j = 0;
+  k = inicio;
+  
+  while (i < n1 && j < n2) 
+  {
+    *contadorInteracao += 1;
+    if (A[i] <= B[j]) 
     {
-      *contadorInteracao += 1;
-        if (A[i] <= B[j]) 
-        {
-            *contadorTroca += 1;
-            vet[k] = A[i];
-            i++;
-        } else 
-        {
-          *contadorTroca += 1;
-            vet[k] = B[j];
-            j++;
-        }
-        k++;
-        
+      *contadorTroca += 1;
+      vet[k] = A[i];
+      i++;
+    } 
+    else 
+    {
+      *contadorTroca += 1;
+      vet[k] = B[j];
+      j++;
     }
+    k++;
+  }
     
-    while (i < n1) 
-    {
-      *contadorTroca += 1;
-      *contadorInteracao += 1;
-        vet[k] = A[i];
-        i++;
-        k++;
-    }
+  while (i < n1) 
+  {
+    *contadorTroca += 1;
+    *contadorInteracao += 1;
+    vet[k] = A[i];
+      i++;
+      k++;
+  }
 
-    while (j < n2) 
-    {
-      *contadorTroca += 1;
-      *contadorInteracao += 1;
-        vet[k] = B[j];
-        j++;
-        k++;
-    }
+  while (j < n2) 
+  {
+    *contadorTroca += 1;
+    *contadorInteracao += 1;
+    vet[k] = B[j];
+    j++;
+    k++;
+  }
 };
 
 void resultadoMergeS (char tipo[], int trocas, int interacoes, int tam, double time_spent)
