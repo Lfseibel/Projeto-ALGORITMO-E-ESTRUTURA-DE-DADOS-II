@@ -8,7 +8,7 @@ int main(void)
 {
   char nomeArquivo[30];
   int *vet;
-  int tamanho = 1000000;//10000, 100000, 500000, 1000000
+  int tamanho = 10000;//10000, 100000, 500000, 1000000
   double time_spent = 0.0;
   printf("Digite o nome do arquivo: \n");
   scanf("%s", nomeArquivo);
