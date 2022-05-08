@@ -8,7 +8,8 @@ int geraAleatorios(char *nomeArquivo, int qtd)
   FILE *arq; //cria o ponteiro pra arquivo
   srand(time(0)); //faz com que os numeros aleatórios não sejam sempre os mesmo
   arq = fopen(nomeArquivo,"w"); //abre o arquivo pra inserção
-  if(arq == NULL){ //se ocorrer erro ao abrir o arquivo retorna 1;
+  if(arq == NULL)
+  { //se ocorrer erro ao abrir o arquivo retorna 1;
     return 1;
   }
   for(int i=0; i <= qtd-1; i++) //for pra gerar qtd de numeros aleatórios
@@ -25,7 +26,8 @@ int geraCrescente(char *nomeArquivo, int qtd)
   FILE *arq; //cria o ponteiro pra arquivo
   
   arq = fopen(nomeArquivo,"w"); //abre o arquivo pra inserção
-  if(arq == NULL){ //se ocorrer erro ao abrir o arquivo retorna 1;
+  if(arq == NULL)
+  { //se ocorrer erro ao abrir o arquivo retorna 1;
     return 1;
   }
   for(int i=0; i <= qtd-1; i++) //for pra gerar qtd de numeros aleatórios
@@ -41,7 +43,8 @@ int geraDecrescente(char *nomeArquivo, int qtd)
   FILE *arq; //cria o ponteiro pra arquivo
   
   arq = fopen(nomeArquivo,"w"); //abre o arquivo pra inserção
-  if(arq == NULL){ //se ocorrer erro ao abrir o arquivo retorna 1;
+  if(arq == NULL)
+  { //se ocorrer erro ao abrir o arquivo retorna 1;
     return 1;
   }
   for(int i = qtd; i>=0; i--) //for pra gerar qtd de numeros aleatórios
@@ -75,8 +78,8 @@ int *leArquivo(char *nomeArquivo, int qtd)
 
 void selecao(char tipo[], int *vet, int tam )
 {
-	int interacoes = 0;
-	int trocas = 0;
+  int interacoes = 0;
+  int trocas = 0;
   int position, aux; //cria as variaves de posicao e a auxiliar
 
   for(int i = 0; i < tam - 1; i++)
@@ -97,9 +100,9 @@ void selecao(char tipo[], int *vet, int tam )
       vet[i]=vet[position];
       vet[position]=aux;
     }
-}
+  }
 
-resultadoSelecao(tipo, trocas, interacoes, tam);
+  resultadoSelecao(tipo, trocas, interacoes, tam);
 };
 //Esta função recebe um vetor de inteiros de tamanho 'tam' e o ordena (ordem crescente) utilizando o método seleção
 void resultadoSelecao (char tipo[], int trocas, int interacoes, int tam)
@@ -110,7 +113,6 @@ void resultadoSelecao (char tipo[], int trocas, int interacoes, int tam)
   fprintf(arq,"Tipo de ordem: %s\n", tipo);
   fprintf(arq,"Número de interações: %d\n", interacoes);
   fprintf(arq,"Número de trocas: %d\n", trocas);
-  
   fclose(arq);
 };
 
