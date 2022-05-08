@@ -8,7 +8,8 @@ int geraAleatorios(char *nomeArquivo, int qtd)
   FILE *arq; //cria o ponteiro pra arquivo
   srand(time(0)); //faz com que os numeros aleatórios não sejam sempre os mesmo
   arq = fopen(nomeArquivo,"w"); //abre o arquivo pra inserção
-  if(arq == NULL){ //se ocorrer erro ao abrir o arquivo retorna 1;
+  if(arq == NULL)
+  { //se ocorrer erro ao abrir o arquivo retorna 1;
     return 1;
   }
   for(int i=0; i <= qtd-1; i++) //for pra gerar qtd de numeros aleatórios
@@ -54,7 +55,8 @@ int geraCrescente(char *nomeArquivo, int qtd)
   FILE *arq; //cria o ponteiro pra arquivo
   
   arq = fopen(nomeArquivo,"w"); //abre o arquivo pra inserção
-  if(arq == NULL){ //se ocorrer erro ao abrir o arquivo retorna 1;
+  if(arq == NULL)
+  { //se ocorrer erro ao abrir o arquivo retorna 1;
     return 1;
   }
   for(int i=0; i <= qtd-1; i++) //for pra gerar qtd de numeros aleatórios
@@ -70,7 +72,8 @@ int geraDecrescente(char *nomeArquivo, int qtd)
   FILE *arq; //cria o ponteiro pra arquivo
   
   arq = fopen(nomeArquivo,"w"); //abre o arquivo pra inserção
-  if(arq == NULL){ //se ocorrer erro ao abrir o arquivo retorna 1;
+  if(arq == NULL)
+  { //se ocorrer erro ao abrir o arquivo retorna 1;
     return 1;
   }
   for(int i = qtd; i>=0; i--) //for pra gerar qtd de numeros aleatórios
@@ -100,38 +103,40 @@ void quickSort(int *vet, int inicio, int fim, int *contadorTroca, int *contadorI
 
 int particiona(int *vet, int inicio, int fim, int *contadorTroca, int *contadorInteracao)
 {
-  	
-	int pivo = vet[inicio]; 
-	int posicaoPivo = inicio;
-	int auxiliar, i;
+  int pivo = vet[inicio]; 
+  int posicaoPivo = inicio;
+  int auxiliar, i;
 
-	// Coloca os elementos menores para esquerda e incrementa a posição do pivo
+  // Coloca os elementos menores para esquerda e incrementa a posição do pivo
 	
-	for(i = inicio+1; i<=fim; i++){
+  for(i = inicio+1; i<=fim; i++)
+  {
     *contadorInteracao += 1;
-		if(vet[i]<pivo){
+    if(vet[i]<pivo)
+    {
       *contadorInteracao += 1;
-			posicaoPivo++;
-			if(i!=posicaoPivo){
-				auxiliar = vet[i];
-				vet[i] = vet[posicaoPivo];
-				vet[posicaoPivo] = auxiliar;
-				*contadorTroca +=1;
-			}
-		}
-	}
+      posicaoPivo++;
+      if(i!=posicaoPivo)
+      {
+        auxiliar = vet[i];
+        vet[i] = vet[posicaoPivo];
+        vet[posicaoPivo] = auxiliar;
+        *contadorTroca +=1;
+      }
+    }
+  }
 	
-	// Coloca o pivo em sua devida posição 
+  // Coloca o pivo em sua devida posição 
   *contadorInteracao += 1;
-	if (posicaoPivo != inicio){
+  if (posicaoPivo != inicio)
+  {
     *contadorTroca +=1;
-	  auxiliar = vet[inicio];
-	  vet[inicio] = vet[posicaoPivo];
-	  vet[posicaoPivo] = auxiliar;
-	}
+    auxiliar = vet[inicio];
+    vet[inicio] = vet[posicaoPivo];
+    vet[posicaoPivo] = auxiliar;
+  }
 	
-
-	return posicaoPivo;
+  return posicaoPivo;
 };
 
 void resultadoQuickS (char tipo[], int trocas, int interacoes, int tam, double time_spent)
