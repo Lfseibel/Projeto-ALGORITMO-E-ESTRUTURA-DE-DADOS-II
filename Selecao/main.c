@@ -4,7 +4,8 @@
 #include "selecao.h"
 
 
-int main(void) {
+int main(void) 
+{
   char nomeArquivo[30];
   int *vet;
   int tamanho = 1000000;//10000, 100000, 500000, 1000000
@@ -20,35 +21,35 @@ int main(void) {
   time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
 	
   resultadoTempo(time_spent);
-	free(vet);
+  free(vet);
 
 	//////////////////////////////////////////////////////////////
   geraCrescente(nomeArquivo, tamanho);
   vet = leArquivo(nomeArquivo, tamanho);
   
-	time_spent = 0.0;
+  time_spent = 0.0;
   begin = clock();
   selecao("Crescente", vet, tamanho);
   end = clock();
   
-	time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+  time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
   
   resultadoTempo(time_spent);
-	free(vet);
+  free(vet);
 
 	//////////////////////////////////////////////////////////////
   geraDecrescente(nomeArquivo, tamanho);
   vet = leArquivo(nomeArquivo, tamanho);
   
-	time_spent = 0.0;
+  time_spent = 0.0;
   begin = clock();
   selecao("Decrescente", vet, tamanho);
   end = clock();
-	time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+  time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
   
-	resultadoTempo(time_spent);
+  resultadoTempo(time_spent);
   
-	free(vet);
+  free(vet);
   
-	return 0;
+  return 0;
 }
